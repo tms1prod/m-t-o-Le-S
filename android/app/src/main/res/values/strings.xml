@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Météo</string>
+    <string name="title_activity_main">Météo</string>
+    <string name="package_name">com.skeurprod.meteo</string>
+    <string name="custom_url_scheme">com.skeurprod.meteo</string>
+</resources>

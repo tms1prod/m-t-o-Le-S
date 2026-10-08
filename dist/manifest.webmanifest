@@ -1,0 +1,25 @@
+{
+  "name": "Météo · Le temps en clair",
+  "short_name": "Météo",
+  "description": "Météo locale, prévisions heure par heure et tendance sur cinq jours.",
+  "lang": "fr-FR",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "theme_color": "#23343b",
+  "background_color": "#23343b",
+  "icons": [
+    {
+      "src": "./icons/icon-192.webp",
+      "sizes": "192x192",
+      "type": "image/webp",
+      "purpose": "any"
+    },
+    {
+      "src": "./icons/icon-512.webp",
+      "sizes": "512x512",
+      "type": "image/webp",
+      "purpose": "any maskable"
+    }
+  ]
+}

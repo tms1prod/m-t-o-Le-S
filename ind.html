@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="refresh" content="0; url=index.html">
+  <script>window.location.replace('index.html');</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Météo-Le S</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="Météo, accueil">
+        <span class="brand-mark">Météo Le S</span>
+        <span class="brand-caption">le temps en clair</span>
+      </a>
+      <form class="search" role="search" onsubmit="return false">
+        <label class="sr-only" for="city-input">Rechercher une ville</label>
+        <input id="city-input" type="search" placeholder="Rechercher une ville" autocomplete="off">
+        <button id="search-btn" type="button" aria-label="Rechercher" title="Rechercher">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.5"></circle><path d="m16 16 4.2 4.2"></path></svg>
+        </button>
+        <button id="geo-btn" class="geo-button" type="button" title="Utiliser ma position">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12Z"></path><circle cx="12" cy="9" r="2.2"></circle></svg>
+          <span>Ma position</span>
+        </button>
+      </form>
+    </header>
+
+    <nav class="page-tabs" aria-label="Pages météo">
+      <button class="page-tab is-active" type="button" data-page="0" aria-current="page">Aujourd'hui</button>
+      <button class="page-tab" type="button" data-page="1">Heure par heure</button>
+      <button class="page-tab" type="button" data-page="2">5 jours</button>
+    </nav>
+
+    <main id="top">
+      <div class="page-viewport" id="page-viewport" aria-label="Pages des prévisions météo" tabindex="0">
+        <div class="page-track" id="page-track">
+          <section class="weather-page today-page" aria-labelledby="location-name">
+            <div class="weather-hero" id="weather-hero" data-temperature="19°">
+              <div class="current">
+                <p class="eyebrow" id="weather-date">AUJOURD'HUI</p>
+                <h1 id="location-name">Paris</h1>
+                <div class="condition-line">
+                  <img id="weather-icon" alt="">
+                  <p id="description">Éclaircies</p>
+                </div>
+                <div class="temperature-row">
+                  <p id="temperature">19°</p>
+                  <span class="temperature-unit">C</span>
+                  <div class="high-low">
+                    <span>Max. <strong id="temp-max">22°</strong></span>
+                    <span>Min. <strong id="temp-min">15°</strong></span>
+                  </div>
+                </div>
+                <p class="weather-status" id="weather-status" role="status">Aperçu météo · Paris</p>
+              </div>
+
+              <aside class="weather-details" aria-label="Conditions actuelles">
+                <p class="details-heading">Conditions actuelles</p>
+                <dl>
+                  <div><dt>Ressenti</dt><dd id="feels-like">19°</dd></div>
+                  <div><dt>Humidité</dt><dd id="humidity">64 %</dd></div>
+                  <div><dt>Vent</dt><dd id="wind">11 km/h</dd></div>
+                  <div><dt>Lever du soleil</dt><dd id="sunrise">06:52</dd></div>
+                </dl>
+              </aside>
+            </div>
+          </section>
+
+          <section class="weather-page forecast-page hourly-page" aria-labelledby="hourly-title">
+            <div class="forecast-heading">
+              <div>
+                <p class="eyebrow">PROCHAINES HEURES</p>
+                <h2 id="hourly-title">La journée, heure par heure</h2>
+              </div>
+              <span class="forecast-note">Prévisions locales</span>
+            </div>
+            <div class="hourly-forecast" id="hourly-forecast" aria-live="polite"></div>
+          </section>
+
+          <section class="weather-page forecast-page daily-page" aria-labelledby="forecast-title">
+            <div class="forecast-heading">
+              <div>
+                <p class="eyebrow">TENDANCE</p>
+                <h2 id="forecast-title">Les cinq prochains jours</h2>
+              </div>
+              <span class="forecast-note">Prévisions locales</span>
+            </div>
+            <div class="forecast" id="forecast" aria-live="polite"></div>
+          </section>
+        </div>
+      </div>
+    </main>
+    <footer><span>météo</span><span>Les prévisions, autrement.</span></footer>
+  </div>
+  <canvas id="particles" aria-hidden="true"></canvas>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
